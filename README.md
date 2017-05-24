@@ -1,6 +1,6 @@
-# TIL
+# Today I Learned
 
-Today I Learned
+하루를 기록
 블로그랑 같이 작성
 
 ## 목표
