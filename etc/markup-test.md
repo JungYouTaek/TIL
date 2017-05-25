@@ -129,7 +129,7 @@
 11. 점진적 향상(Progressive Enhancement)의 뜻을 설명 할 수 있나요?
 > 이것도 모른다..3연속 blank..
 >
-> [내용이 길어 다른 링크로 첨부]()
+> [내용이 길어 다른 링크로 첨부](https://github.com/JungYouTaek/TIL/blob/master/etc/web-accessibility.md)
 12. 웹폰트를 적용하기 위해서는 어떤 확장자의 폰트 파일들이 필요할까요?
 > ttc, ttf
 >
