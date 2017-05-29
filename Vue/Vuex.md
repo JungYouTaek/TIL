@@ -142,3 +142,78 @@ Vuex를 사용한다고 꼭 모든 상태를 Vuex에 넣어야 하는것은 아�
 
 ## Getters
 
+> getter - 값을 반환하기 위해 사용
+> setter - 값을 입력하기 위해 사용
+
+Store State를 기반하는 상태를 계산할 때 `computed` 대신에 사용
+
+Vuex에서 getters 정의하면 Arrow function으로 받은 인자에 대해 계산된 결과를 담는다. getters는 `store.getters`로 객체에 노출된다.
+
+```
+getters: {
+	doneTodos: state => {
+		return state.todos.filter(todo => todo.done)
+	}
+}
+```
+
+`mapGetters`는 getter를 로컬 computed에 매핑할 때 사용 (스프레드 연산자 사용)
+
+```
+computed: {
+	// getter를 객체 전파 연산자로 계산해 추가함
+	...mapGetters([
+		'doneTodosCount',
+		'anotherGetter',
+		// ...
+	])
+}
+```
+
+## Mutations(변이)
+
+Vuex에서 실제로 상태를 변경하는 유일한 방법!
+
+핸들러 함수를 통해 상태를 수정할 수 있고, 핸들러 함수는 `store.commit`을 통해 호출
+
+mutations에 `payload`라는 추가 전달인자를 사용할 수 있음.
+
+```
+mutations: {
+	increment (state, payload) {
+		state.coynt += payload.amount
+	}
+}
+
+```
+```
+store.commit('increment', {
+	amount: 10
+})
+```
+
+타입에 다른 모듈에서 선언한 상수를 함수 이름으로 사용 가능
+
+
+## Actions (액션)
+
+액션은 변이와 유사하지만, 상태를 변이시키는 대신 액션으로 변이에 대한 커밋을 실행.
+
+mutation은 항상 동기적이어야 하지만, 액션은 비동기 작업이 포함될 수 있음
+
+```
+actions: {
+  incrementAsync ({ commit }) {
+    setTimeout(() => {
+      commit('increment')
+    }, 1000)
+  }
+}
+```
+
+
+## Modules(모듈)
+
+단일 상태 트리를 사용하기 때문에 애플리케이션의 모든 상태가 하나의 큰 객체 안에 포함. 규모가 커지면 Store가 매우 커질 수 있음.
+
+이를 위해 Vuex에서도 Store를 모듈화 가능
