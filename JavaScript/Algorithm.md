@@ -19,6 +19,22 @@ function solution(N) {
 }
 ```
 
+2-1. 홀수찾기
+```
+function solution(A) {
+var qtts = {};
+for (var iA in A) {
+var element = A[iA];
+if (!qtts[element]) {
+qtts[element] = 1;
+} else {
+delete qtts[element];
+}
+}
+return parseInt(Object.keys(qtts)[0]);
+}
+```
+
 2-2. K번만큼 뒤에서 잘라 앞에 붙이기
 ```
 function solution(A, K) {
