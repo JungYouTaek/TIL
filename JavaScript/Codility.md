@@ -45,3 +45,24 @@ function solution(A, K) {
     return A
 }
 ```
+
+4-1 다리완성 최소
+```
+function solution(X, A) {
+    let B = [], result = -1;
+    for(let i = 0; i < A.length; i++) {
+        if ((A[i] <= X) && (B.indexOf(A[i]) == -1)) {
+            B.push(A[i])
+            if ( B.length == X ) { result = i; }
+        }
+    }
+    return result
+}
+```
+
+5-1 두수 사이에 약수 구하기
+```
+function solution(A, B, K) {
+    return Math.floor(B/K) - Math.ceil(A/K) + 1
+}
+```
