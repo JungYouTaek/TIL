@@ -35,3 +35,7 @@ for ( let i = 2; i < 10; i++ ) {
   if (i == 2) { A.push(i) }
   else if (check) { A.push(i) }
 }
+
+join으로 배열 > 문자열 뿐만이 아닌 반복단어 치환도 가능
+
+repeat 반복 메서드, 재귀함수와 같이 사용하면 굿
