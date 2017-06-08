@@ -5,6 +5,9 @@ A.sort((a,b) => { return a-b})
 큐 push unshift
 문자열 포함은 정규식으로! .match(/1/g).length로 개수
 true false로 전체에대해 체크
+charAt() 해당 인덱스로 내용반환
+for in for of 사용
+Math.min max 사용
 
 피보나치
 function jumpCase(num) {
@@ -19,7 +22,6 @@ function jumpCase(num) {
 
 	return answer;
 }
-
 소수
 let A = [];
 for ( let i = 2; i < 10; i++ ) {
@@ -36,6 +38,12 @@ for ( let i = 2; i < 10; i++ ) {
   else if (check) { A.push(i) }
 }
 
-join으로 배열 > 문자열 뿐만이 아닌 반복단어 치환도 가능
+그냥 안궁금할수도 있겠지만
+0. 문제를 대충 읽는다.
+1. 걍 각 엘리먼트를 인덱스로 갯수 세면 되겠네
+2. 인풋크기를 본다. 1,000,000,000이네.  배열 못만들겠다
+3. C++였으면 벡터 pair이나 set, map을 사용하고 JS의 경우 hash를 쓰자
+4. 코딩
 
-repeat 반복 메서드, 재귀함수와 같이 사용하면 굿
+최대공약수
+function greatestCommonDivisor(a, b) {return b ? greatestCommonDivisor(b, a % b) : Math.abs(a);}
