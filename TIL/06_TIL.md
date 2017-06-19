@@ -13,3 +13,5 @@
 > CSS, JS 파일 통합,
 > 프로토콜 생략
 > script body 최하단
+> CSS sprite
+밖에 기억이안난다..
